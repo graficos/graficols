@@ -11,13 +11,13 @@ into a library (my first one ever) because I use variations of the same in sever
 
 ```
 // note the ellipsis is for explanation purposes only
-$CONTAINER-WIDTH: (5, 10, 20..., 50, ..., 100)
+$G_CONTAINER_WIDTHS: (5, 10, 20..., 50, ..., 100)
 ```
 
 - A set of breackpoints:
 
 ```
-$WINDOW-DIMENSIONS: (
+$G_WINDOW_DIMENSIONS: (
     // edit / add BPs as you please
     sm: '(max-width: 64em)',
     md: '(min-width: 64.01em) and (max-width: 87.99em)',
@@ -25,26 +25,26 @@ $WINDOW-DIMENSIONS: (
 );
 ```
 
-- The actual mixin `generateCols` wich is the one you will use on your scss.
+- The actual mixin `gGenerateCols` wich is the one you will use on your scss.
 
 ## Usage
 
 1. Import the scss file
-  1.1 Re-define the collections (`$CONTAINER-WIDTH` and `$WINDOW-DIMENSIONS`) if you want.
+  1.1 Re-define the collections (`G_CONTAINER_WIDTHS` and `$G_WINDOW_DIMENSIONS`) if you want.
 2. `@include` the mixins like so:
 
 ```
 // with no @media queries
-@include generateCols(null);
+@include gGenerateCols(null);
 // -> will create dynamic classes: min-w50p, max-w50p, w50p, push50p, pull50p
 
 // with media queries
-@each $mediaName, $mediaValue in $WINDOW-DIMENSIONS {
+@each $mediaName, $mediaValue in $G_WINDOW_DIMENSIONS {
   @media #{ $mediaValue } {
-    @include generateCols($mediaName);
+    @include gGenerateCols($mediaName);
   }
 }
-// -> will create: xl:min-w50p (using the keys from $WINDOW-DIMENSIONS as class prefixes)
+// -> will create: (tailwind style) xl:min-w50p (using the keys from $G_WINDOW_DIMENSIONS as class prefixes)
 ```
 
 ## Recommendation

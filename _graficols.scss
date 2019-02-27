@@ -1,7 +1,7 @@
 // Collections:
 // ========
 
-$CONTAINER-WIDTHS: (
+$G_CONTAINER_WIDTHS: (
     5,
     10,
     20,
@@ -16,7 +16,7 @@ $CONTAINER-WIDTHS: (
     100
 );
 
-$WINDOW-DIMENSIONS: (
+$G_WINDOW_DIMENSIONS: (
     // edit / add BPs as you please
     sm: '(max-width: 64em)',
     md: '(min-width: 64.01em) and (max-width: 87.99em)',
@@ -26,11 +26,11 @@ $WINDOW-DIMENSIONS: (
 // Mixin:
 // ========
 
-@mixin generateCols($preffix) {
+@mixin gGenerateCols($preffix: null) {
   // examples: xl:min-w50p, md:w100p
   $conditionalPreffix: if($preffix != null, $preffix + '\\:', '');
 
-  @each $width in $CONTAINER-WIDTHS {
+  @each $width in $G_CONTAINER_WIDTHS {
     .#{$conditionalPreffix}min-w#{$width}p { // example: min-w50p, min-w100p, min-w40p...
       min-width: $width + 0%;
     }
@@ -52,10 +52,11 @@ $WINDOW-DIMENSIONS: (
 // Usage:
 // ========
 // // with no @media queries
-// @include generateCols(null);
+// @include gGenerateCols(null);
 
 // // with media queries
-// @each $mediaName, $mediaValue in $WINDOW-DIMENSIONS {
-// @media #{ $mediaValue } {
-//   @include generateCols($mediaName);
+// @each $mediaName, $mediaValue in $G_WINDOW_DIMENSIONS {
+//   @media #{ $mediaValue } {
+//     @include gGenerateCols($mediaName);
+//   }
 // }

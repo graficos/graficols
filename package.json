@@ -6,7 +6,8 @@
     "scss",
     "columns",
     "grids",
-    "utility classes"
+    "utility classes",
+    "tailwind"
   ],
   "author": "paul_melero",
   "repository": "graficos-net/graficols",
