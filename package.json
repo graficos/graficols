@@ -9,5 +9,7 @@
     "utility classes"
   ],
   "author": "paul_melero",
+  "repository": "graficos-net/graficols",
+  "main": "_graficols.scss",
   "license": "MIT"
 }
