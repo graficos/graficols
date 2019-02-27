@@ -29,9 +29,17 @@ $G_WINDOW_DIMENSIONS: (
 
 ## Usage
 
-1. Import the scss file
-  1.1 Re-define the collections (`G_CONTAINER_WIDTHS` and `$G_WINDOW_DIMENSIONS`) if you want.
-2. `@include` the mixins like so:
+1. Installation
+
+```
+npm i @graficos/graficols
+```
+
+1. Import the scss file (depending on your environment or bundling system)
+
+1. Re-define the collections (`G_CONTAINER_WIDTHS` and `$G_WINDOW_DIMENSIONS`) if you want.
+
+1. `@include` the mixin like so:
 
 ```
 // with no @media queries
