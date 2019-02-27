@@ -1,6 +1,6 @@
 {
   "name": "@graficos/graficols",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tiny helper to get your scss cols in place",
   "keywords": [
     "scss",
