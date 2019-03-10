@@ -31,15 +31,35 @@ $G_WINDOW_DIMENSIONS: (
 
 1. Installation
 
-```
-npm i @graficos/graficols
-```
+    ```
+    npm i @graficos/graficols
+    ```
 
-1. Import the scss file (depending on your environment or bundling system)
+2. Import the scss file. Depending on your environment or bundling system, you might have a defined way of doing
+this. Examples:
+  - Import in an Angular project: [link](https://github.com/angular/angular-cli/issues/2269#issuecomment-320126603)
+  - In Nuxt.js: [link](https://nuxtjs.org/api/configuration-css)
+  - Using Webpack and adding an alias: [link](https://github.com/webpack/webpack/issues/1789#issuecomment-250983832)
+  - Using Parcel: [link](https://github.com/parcel-bundler/parcel/issues/1800)
+  - In a Vanilla project:
+    - Add a `.sassrc` file in your root directory with the following content:
+    ```
+    {
+      "includePaths": ["node_modules"]
+    }
+    ```
 
-1. Re-define the collections (`G_CONTAINER_WIDTHS` and `$G_WINDOW_DIMENSIONS`) if you want.
+    - Then, you can `@import` from your SCSS files using `~`:
 
-1. `@include` the mixin like so:
+    ```
+    @import "~@graficos/graficols/graficols";
+    // ... use the mixin here :)
+    ```
+
+
+3. Re-define the collections (`G_CONTAINER_WIDTHS` and `$G_WINDOW_DIMENSIONS`) if you please.
+
+4. `@include` the mixin like so:
 
 ```
 // with no @media queries
